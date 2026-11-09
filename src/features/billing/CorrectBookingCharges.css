@@ -1,0 +1,230 @@
+/*
+  Nguyễn Quốc Hải - HE173133 - SE1990NJ
+  9/11/2026
+*/
+
+.charge-correction {
+  color: #202b2a;
+  background: #fff;
+  border: 1px solid #d6dfdc;
+  border-radius: 6px;
+  padding: 1.25rem;
+  font-family: inherit;
+}
+
+.charge-correction__header,
+.charge-correction__summary,
+.charge-correction__actions,
+.charge-correction__dialog-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.charge-correction__header {
+  margin-bottom: 1.25rem;
+}
+
+.charge-correction__header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.charge-correction__eyebrow {
+  margin: 0 0 0.25rem;
+  color: #52635f;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.charge-correction__booking {
+  color: #334d48;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.charge-correction__table-wrap {
+  overflow-x: auto;
+}
+
+.charge-correction__table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.charge-correction__table th,
+.charge-correction__table td {
+  border-bottom: 1px solid #e4e9e7;
+  padding: 0.75rem 0.5rem;
+  vertical-align: middle;
+}
+
+.charge-correction__table thead th {
+  color: #52635f;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.charge-correction__table tbody th {
+  min-width: 10rem;
+  font-weight: 600;
+}
+
+.charge-correction__table td:nth-child(2) {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.charge-correction__table input,
+.charge-correction__field textarea {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #aebcb8;
+  border-radius: 4px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+}
+
+.charge-correction__table input {
+  min-width: 10rem;
+  padding: 0.55rem 0.65rem;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.charge-correction__input-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.charge-correction__table input[aria-invalid='true'] {
+  border-color: #b42318;
+}
+
+.charge-correction__summary {
+  margin: 1rem 0;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid #d6dfdc;
+  font-variant-numeric: tabular-nums;
+}
+
+.charge-correction__summary strong {
+  font-size: 1.1rem;
+}
+
+.charge-correction__field {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.charge-correction__field textarea {
+  resize: vertical;
+  padding: 0.7rem;
+  font-weight: 400;
+}
+
+.charge-correction__table input:focus-visible,
+.charge-correction__field textarea:focus-visible,
+.charge-correction button:focus-visible {
+  outline: 3px solid #76b7a5;
+  outline-offset: 2px;
+}
+
+.charge-correction__notice,
+.charge-correction__state {
+  padding: 0.75rem;
+  background: #f0f5f3;
+  border-left: 3px solid #426e62;
+}
+
+.charge-correction__error {
+  color: #8f1d14;
+}
+
+.charge-correction__success {
+  color: #1c6b45;
+}
+
+.charge-correction__actions {
+  justify-content: flex-end;
+  margin-top: 1.25rem;
+}
+
+.charge-correction button {
+  min-height: 2.5rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #aebcb8;
+  border-radius: 4px;
+  background: #fff;
+  color: #202b2a;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.charge-correction button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.charge-correction .charge-correction__primary {
+  border-color: #245c50;
+  background: #245c50;
+  color: #fff;
+}
+
+.charge-correction__backdrop {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgb(16 28 25 / 48%);
+}
+
+.charge-correction__dialog {
+  width: min(100%, 30rem);
+  padding: 1.25rem;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 16px 48px rgb(16 28 25 / 22%);
+}
+
+.charge-correction__dialog h3 {
+  margin-top: 0;
+}
+
+.charge-correction__dialog-actions {
+  justify-content: flex-end;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .charge-correction {
+    padding: 0.9rem;
+  }
+
+  .charge-correction__header {
+    align-items: flex-start;
+  }
+
+  .charge-correction__table th,
+  .charge-correction__table td {
+    padding: 0.65rem 0.35rem;
+  }
+
+  .charge-correction__table thead th {
+    min-width: 8rem;
+  }
+}

@@ -1,0 +1,427 @@
+/*
+    Nguyễn Quốc Hải - HE173133 - SE1990NJ
+    9/11/2026
+*/
+:root {
+  font-family: "Segoe UI", sans-serif;
+  color: #202b2a;
+  background: #f2f5f3;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.app-shell {
+  width: min(100% - 2rem, 70rem);
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.app-shell__header {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #d6dfdc;
+}
+
+.app-shell__brand {
+  margin: 0 0 0.35rem;
+  color: #245c50;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.app-shell__header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.app-shell__empty {
+  margin-top: 1.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid #d6dfdc;
+}
+
+.app-shell__empty h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.workspace-empty {
+  margin: 1.5rem 0;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid #d6dfdc;
+  color: #52635f;
+}
+
+.operation-tabs {
+  display: flex;
+  gap: 0.35rem;
+  margin: 1.25rem 0;
+  overflow-x: auto;
+  border-bottom: 1px solid #cbd6d2;
+}
+
+.operation-tab {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  flex: 0 0 auto;
+  padding: 0.8rem 0.7rem;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: #52635f;
+  font: inherit;
+  cursor: pointer;
+}
+
+.operation-tab span {
+  color: #245c50;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.operation-tab--active {
+  border-bottom-color: #245c50;
+  color: #202b2a;
+  font-weight: 700;
+}
+
+.operation-panel {
+  padding: 1.25rem 0;
+}
+
+.operation-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.operation-heading h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.operation-eyebrow {
+  margin: 0 0 0.3rem;
+  color: #52635f;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.operation-code {
+  color: #334d48;
+  font-weight: 700;
+  text-align: right;
+}
+
+.receipt-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0.85rem 1rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.receipt-facts div {
+  min-width: 0;
+}
+
+.receipt-facts dt {
+  color: #52635f;
+  font-size: 0.8rem;
+}
+
+.receipt-facts dd {
+  margin: 0.2rem 0 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.operation-table-wrap {
+  overflow-x: auto;
+}
+
+.operation-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.operation-table th,
+.operation-table td {
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid #dce4e1;
+}
+
+.operation-table thead th {
+  color: #52635f;
+  font-size: 0.8rem;
+}
+
+.operation-table tbody th {
+  font-weight: 600;
+}
+
+.operation-table tfoot th,
+.operation-table tfoot td {
+  font-weight: 700;
+}
+
+.operation-choice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin: 1.25rem 0;
+  padding: 0;
+  border: 0;
+}
+
+.operation-choice legend {
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+
+.operation-choice label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.operation-field {
+  display: grid;
+  gap: 0.4rem;
+  font-weight: 600;
+}
+
+.operation-field input,
+.operation-field select,
+.operation-field textarea {
+  width: 100%;
+  min-height: 2.5rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid #aebcb8;
+  border-radius: 4px;
+  background: #fff;
+  color: #202b2a;
+  font: inherit;
+}
+
+.operation-field textarea {
+  resize: vertical;
+}
+
+.operation-field input:focus-visible,
+.operation-field select:focus-visible,
+.operation-field textarea:focus-visible,
+.operation-panel button:focus-visible,
+.operation-tab:focus-visible {
+  outline: 3px solid #76b7a5;
+  outline-offset: 2px;
+}
+
+.operation-panel form {
+  display: grid;
+  gap: 1rem;
+}
+
+.denomination-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0.75rem;
+}
+
+.workspace-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.operation-panel button {
+  min-height: 2.5rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid #aebcb8;
+  border-radius: 4px;
+  background: #fff;
+  color: #202b2a;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.operation-panel button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.operation-panel button.workspace-primary,
+.workspace-primary {
+  border-color: #245c50;
+  background: #245c50;
+  color: #fff;
+}
+
+.operation-alert,
+.operation-error,
+.operation-success {
+  margin: 0.9rem 0;
+  padding: 0.75rem;
+}
+
+.operation-alert {
+  border-left: 3px solid #a36a12;
+  background: #fff7e8;
+}
+
+.operation-error {
+  border-left: 3px solid #a52a22;
+  background: #fff0ef;
+  color: #8f1d14;
+}
+
+.operation-success {
+  border-left: 3px solid #24744d;
+  background: #edf7f0;
+  color: #1c6b45;
+}
+
+.maintenance-list {
+  border-top: 1px solid #d6dfdc;
+}
+
+.maintenance-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.8fr);
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #d6dfdc;
+}
+
+.maintenance-row h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.maintenance-row p {
+  margin: 0.35rem 0;
+  color: #52635f;
+}
+
+.maintenance-row__actions,
+.maintenance-row__actions form {
+  display: grid;
+  align-content: start;
+  gap: 0.65rem;
+}
+
+.status-label {
+  display: inline-block;
+  padding: 0.2rem 0.45rem;
+  background: #eef0ef;
+  color: #45514d;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.status-label--ready,
+.status-label--in_stock {
+  background: #e8f4ec;
+  color: #21643e;
+}
+
+.status-label--low_stock {
+  background: #fff4dc;
+  color: #805509;
+}
+
+.status-label--out_of_stock {
+  background: #ffedeb;
+  color: #8f1d14;
+}
+
+.inventory-filters {
+  display: grid;
+  grid-template-columns: minmax(14rem, 2fr) repeat(2, minmax(10rem, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.workspace-backdrop {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgb(16 28 25 / 48%);
+}
+
+.workspace-dialog {
+  width: min(100%, 30rem);
+  padding: 1.25rem;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 16px 48px rgb(16 28 25 / 22%);
+}
+
+.workspace-dialog h2 {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+
+.workspace-dialog .workspace-actions button {
+  min-height: 2.5rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid #aebcb8;
+  border-radius: 4px;
+  background: #fff;
+  color: #202b2a;
+  font: inherit;
+  font-weight: 600;
+}
+
+.workspace-dialog .workspace-actions .workspace-primary {
+  border-color: #245c50;
+  background: #245c50;
+  color: #fff;
+}
+
+.workspace-dialog button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    width: min(100% - 1.25rem, 70rem);
+    padding-top: 1rem;
+  }
+
+  .maintenance-row {
+    grid-template-columns: 1fr;
+  }
+
+  .inventory-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .operation-table th,
+  .operation-table td {
+    padding: 0.6rem 0.35rem;
+  }
+}

@@ -1,0 +1,6 @@
+# Nguyễn Quốc Hải - HE173133 - SE1990NJ
+# 9/11/2026
+node_modules/
+dist/
+*.tsbuildinfo
+*.local
